@@ -70,10 +70,15 @@
   // Solo el numero publico de El Retorno. Nada mas vive en esta pagina.
   var PHONE = "523334864078";
   // El mensaje sale de una lista fija: nunca se usa texto de la URL tal cual.
+  var FICHA = "\n\nAndo buscando este motor:\n" +
+    "Marca: [ ]\n" +
+    "Modelo: [ ]\n" +
+    "Año: [ ]\n" +
+    "Litros: [ ]";
   var MSGS = {
-    fb: "Hola! Vengo de Facebook, quiero cotizar un motor.",
-    ig: "Hola! Vengo de Instagram, quiero cotizar un motor.",
-    def: "Hola! Quiero cotizar un motor."
+    fb: "Hola! Vengo de Facebook, quiero cotizar un motor." + FICHA,
+    ig: "Hola! Vengo de Instagram, quiero cotizar un motor." + FICHA,
+    def: "Hola! Quiero cotizar un motor." + FICHA
   };
   var src = (new URLSearchParams(location.search).get("src") || "").toLowerCase();
   var text = encodeURIComponent(MSGS.hasOwnProperty(src) ? MSGS[src] : MSGS.def);
